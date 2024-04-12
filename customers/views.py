@@ -9,9 +9,7 @@ from .serializers import *
 
 @api_view(['GET', 'POST'])
 def customers_list(request):
-    """
-    List or create new customers
-    """
+    
     if request.method == 'GET':
         data = []
         nextPage = 1
@@ -44,9 +42,7 @@ def customers_list(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def customers_detail(request, pk):
-    """
-    Retrieve, update or delete a customer by id/pk
-    """
+    
     try:
         customer = Customer.objects.get(pk=pk)
     except Customer.DoesNotExist:
